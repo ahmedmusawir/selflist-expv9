@@ -32,6 +32,9 @@
      */
     foreach ($main_cats as $main_cat) {
 
+        // COLLECTING ALL THE SUB CATEGORIES
+        // Following function coming form:
+        // _functions/selflist/selflist-get-subcats-json.php 
         $new_results = get_selflist_sub_cats_to_json($main_cat->term_id);
 
         array_push($results, array(
