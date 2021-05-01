@@ -119,6 +119,8 @@ require get_theme_file_path('/_functions/selflist/ajax/secondo-cat-insert-ajax.p
 require get_theme_file_path('/_functions/selflist/ajax/terzo-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-preview-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-ajax.php');
+require get_theme_file_path('/_functions/selflist/rest/category-to-rest.php');
+
 // SELFLIST CUSTOM TAXONOMY & CATEGORIES
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-cat-list-w-links.php');

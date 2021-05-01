@@ -30,8 +30,9 @@ class TestWebWorker {
       // MAKING WEB WORKER
       this.worker = new Worker('WebWorker.js');
       // SENDING WORK MESSAGES
-      this.worker.postMessage('Get Started');
+      // this.worker.postMessage('Get Started');
       this.worker.postMessage('Fetch');
+      this.worker.postMessage('Fetch Cats');
     } else {
       console.log('DB not updated...');
     }
