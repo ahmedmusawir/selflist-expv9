@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { get, keys } from 'idb-keyval';
 import { selectize } from 'selectize';
 // FOLLOWING NEEDED EVERY TIME ASYNC AWAIT IS USED
 import regeneratorRuntime from 'regenerator-runtime';
@@ -87,33 +86,16 @@ class CatSelectDataParent {
   };
 
   getData = async () => {
-    // GETTING DATA (catInfo) FROM INDEXED DB
-    await get('catInfo')
-      .then((catData) => {
-        // console.log('CatInfo: ', catData);
-        this.theJsonData = catData;
-        // LOADING DATA TO MAIN SELECTIZED DROPDOWN
-        this.loadMainCatData();
-      })
-      .catch((err) =>
-        console.log(
-          'Failed to Read Indx Db: catInfo [CatSelectDataParent.js]',
-          err
-        )
-      );
+    try {
+      let response = await fetch(this.url);
+      let data = await response.json();
+      this.theJsonData = data;
+      // LOADING DATA TO MAIN SELECTIZED DROPDOWN
+      this.loadMainCatData();
+    } catch (e) {
+      console.log(e);
+    }
   };
-
-  //   getData = async () => {
-  //     try {
-  //       let response = await fetch(this.url);
-  //       let data = await response.json();
-  //       this.theJsonData = data;
-  //       // LOADING DATA TO MAIN SELECTIZED DROPDOWN
-  //       this.loadMainCatData();
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
 
   loadMainCatData = () => {
     this.theJsonData.map((catData) => {

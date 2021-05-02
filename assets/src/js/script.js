@@ -7,11 +7,13 @@ import DateTimePickerTest from './_modules/_test/DateTimePickerTest';
 import FormValdationTest from './_modules/_test/formVaidationTest';
 import TestFlagPost from './_modules/_test/TestFlagPost';
 import TestWebWorker from './_modules/_test/TestWebWorker';
+
 // PRODUCTION CODE HERE
-import SelflistSearch from './_modules/SelflistSearch';
-import SelflistCatSearch from './_modules/SelflistCatSearch';
+
+// LIST OR CATEGORY SEARCH RELATED
 import SelflistPostSearch from './_modules/SelflistPostSearch';
 import SelflistCatSearchJson from './_modules/SelflistCatSearchJson';
+import SelflistCatSearchIndxDb from './_modules/SelflistCatSearchIndxDb';
 // LIST INSERT RELATED
 import CatSelectDataParent from './_modules/selflist-crud/CatSelectDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
@@ -76,14 +78,20 @@ class App {
 
     this.runTestCode();
 
+    /**
+     * LIST OR CATEGORY SEARCH RELATED CLASSES
+     */
+
     // Selflist Search Module
-    new SelflistSearch();
+    // new SelflistSearch();
     // Selflist Category Search Filter - non REST
-    new SelflistCatSearch();
-    // Selflist Post Item Search Filter - non REST
+    // new SelflistCatSearch();
+    // Post Item Search Filter - non REST
     new SelflistPostSearch();
-    // Selflist List Category Search from JSON file
-    new SelflistCatSearchJson();
+    // List Category Search from JSON file
+    // new SelflistCatSearchJson();
+    // List or Category Search from Indx Db
+    new SelflistCatSearchIndxDb();
 
     // SELFLIST LIST INSERT PAGE CAT SELECT DROPDOWNS
     new CatSelectDataParent();

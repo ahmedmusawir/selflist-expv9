@@ -2,41 +2,46 @@ import { get, keys } from 'idb-keyval';
 
 class CatToIndexDbWebWorker {
   constructor() {
-    this.worker;
-    this.keyExists = false;
-    this.setEvents();
+    // MAKING WEB WORKER
+    this.workerFile = selflistData.root_url + '/WebWorker.js';
+    this.worker = new Worker(this.workerFile);
+    // BRINGING CATEGORY DATA ONCE FIRST TIME
+    this.startWebWorkerOnce();
+    // UPDATING CATEGORY DATA EVERY HOUR
+    this.startWebWorkerAtInterval();
   }
 
-  setEvents = () => {
-    document.addEventListener('DOMContentLoaded', this.startWebWorker);
-  };
-
-  startWebWorker = async () => {
+  startWebWorkerOnce = async () => {
     // CHECKING FOR THE KEY IN INDEXED DB
-    await keys().then((keys) => {
-      keys.forEach((key) => {
-        console.info('The Key is: ', key);
+    await keys()
+      .then((keys) => {
+        keys.forEach((key) => {
+          console.info('The Key is: ', key);
 
-        if (key == 'catInfo') {
-          this.keyExists = true;
-          // console.log('Key Found');
-        }
-      });
-    });
+          if (key == 'catInfo') {
+            this.keyExists = true;
+          }
+        });
+      })
+      .catch((err) =>
+        console.log('Key Check Failed [CatToIndexDbWebWorker.js]', err)
+      );
 
     console.log('Key Exists: ', this.keyExists);
+
     // WHEN THE KEY NOT PRESENT
     if (this.keyExists != true) {
-      // MAKING WEB WORKER
-      this.worker = new Worker('WebWorker.js');
       // SENDING WORK MESSAGES
       // this.worker.postMessage('Get Started');
-      // this.worker.postMessage('Fetch');
-      // this.worker.postMessage('Fetch Cats');
-      this.worker.postMessage('Update Cats');
+      this.worker.postMessage('Fetch Cats');
     } else {
       console.log('DB not updated...');
     }
+  };
+
+  startWebWorkerAtInterval = () => {
+    // STARTING DATA UPDATE WITH AN INTERVAL [1HR = 3600,000 MLS]
+    this.worker.postMessage('Fetch Interval');
   };
 }
 
