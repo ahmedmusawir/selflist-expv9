@@ -65,6 +65,7 @@ import ProfileAdditionalDataUi from './_modules/selflist-profile-data/ProfileAdd
 import ProfileDataUpdateAjax from './_modules/selflist-profile-data/ProfileDataUpdateAjax';
 import ProfileAdditionalDataValidation from './_modules/selflist-profile-data/ProfileAdditionalDataValidation';
 import ProfileDataToIndexDb from './_modules/selflist-profile-data/ProfileDataToIndexDb';
+import ProfilePassReset from './_modules/selflist-profile-data/ProfilePassReset';
 // HMU RELATED
 import HmuLinkMaker from './_modules/selflist-hmu/HmuLinkMaker';
 // FLAG RELATED
@@ -168,6 +169,7 @@ class App {
     new ProfileDataUpdateAjax();
     new ProfileAdditionalDataValidation();
     new ProfileDataToIndexDb();
+    new ProfilePassReset();
 
     // HMU Email Link Maker
     new HmuLinkMaker();

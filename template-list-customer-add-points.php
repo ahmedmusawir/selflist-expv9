@@ -18,8 +18,8 @@ get_header();
 /**
  * CUSOMER/USER PROFILE
  */
-// $current_user = wp_get_current_user();
-// $user_points = get_field('selflist_points', 'user_' . $current_user->id);
+$current_user = wp_get_current_user();
+$user_points = get_field('selflist_points', 'user_' . $current_user->id);
 // $user_registered = $current_user->user_registered;
 // $user_email = $current_user->user_email;
 // $user_total_list_count = count_user_posts($current_user->id, 'post', false); // false for all posts
@@ -32,10 +32,10 @@ get_header();
 
 <main id="primary" class="site-main container customer-profile-page">
 
-  <div class="row">
-    <!-- LEFT PROFILE MENU COLUMN -->
-    <div class="col-sm-12 col-md-4">
-      <?php
+    <div class="row">
+        <!-- LEFT PROFILE MENU COLUMN -->
+        <div class="col-sm-12 col-md-4">
+            <?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'customer-profile-menu',
@@ -43,21 +43,29 @@ get_header();
 				)
 			);
 			?>
-    </div>
-    <!-- LEFT PROFILE MENU COLUMN ENDS -->
-    <!-- RIGHT PROFILE CONTENT COLUMN -->
-    <div class="col-sm-12 col-md-8">
-      <h3 class="text-uppercase"><small class="font-weight-bold">Customer Points Portal</small></h3>
-      <h4 class="h4">Add Points by Purchasing following Products:</h4>
-      <hr>
-      <?php echo do_shortcode('[products]'); ?>
+        </div>
+        <!-- LEFT PROFILE MENU COLUMN ENDS -->
+        <!-- RIGHT PROFILE CONTENT COLUMN -->
+        <div class="col-sm-12 col-md-8">
+            <h3 class="text-uppercase"><small class="font-weight-bold">Customer Points Portal</small></h3>
+            <h6 class="h6 text-uppercase font-weight-bold mb-5">
+                Your Available Points:
+                <strong class="text-danger">
+                    <span id="payment-summary-avail-points">
+                        <?php echo $user_points; ?>
+                    </span>
+                </strong>
+            </h6>
+            <h4 class="h4">Add Points by Purchasing following Products:</h4>
+            <hr>
+            <?php echo do_shortcode('[products]'); ?>
 
-    </div>
-    <!-- RIGHT PROFILE CONTENT COLUMN ENDS -->
+        </div>
+        <!-- RIGHT PROFILE CONTENT COLUMN ENDS -->
 
-  </div> <!-- END ROW -->
+    </div> <!-- END ROW -->
 
-  <hr>
+    <hr>
 
 </main><!-- #main -->
 

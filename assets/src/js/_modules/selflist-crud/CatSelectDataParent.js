@@ -19,13 +19,14 @@ import regeneratorRuntime from 'regenerator-runtime';
 
 class CatSelectDataParent {
   constructor() {
-    this.init();
+    // super();
+    // this.init();
     // SITE ROOT URL FROM WP LOCALIZE SCRIPT
     this.siteRoot = selflistData.root_url;
     // COLLECTION DATA
     this.theJsonData;
-    this.url = this.siteRoot + '/wp-content/uploads/categories.json';
-    this.getData();
+    // FOLLOWING JSON FILE IS NOT BEING USED ANYMORE
+    // this.url = this.siteRoot + '/wp-content/uploads/categories.json';
 
     // INITIALIZE UP SELECTIZE
     if ($('#select-main-cats').length) {
@@ -79,6 +80,11 @@ class CatSelectDataParent {
 
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectAllCityCtrl = this.selectAllCities[0].selectize;
+    }
+
+    // LOADING DATA FROM INDEXED DB
+    if ($('#select-main-cats').length) {
+      this.getData();
     }
   }
 

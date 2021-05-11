@@ -194,14 +194,23 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
         'lister-linkedin': {
           linkedin: true,
         },
-        'lister-google-plus': {
-          google_plus: true,
-        },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
-        // OPEN THE USER VALIDATION SCREEN
-        this.displayValidationBox();
+        this.getListFormData();
+        // console.log(this.socialFacebook);
+        if (
+          !this.socialFacebook &&
+          !this.socialYelp &&
+          !this.socialInstagram &&
+          !this.socialLinkedin &&
+          !this.socialTwitter
+        ) {
+          alert('You must have at least one Social Link');
+        } else {
+          // OPEN THE USER VALIDATION SCREEN
+          this.displayValidationBox();
+        }
       },
     });
   };

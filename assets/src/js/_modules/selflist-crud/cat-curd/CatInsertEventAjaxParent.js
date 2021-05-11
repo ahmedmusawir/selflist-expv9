@@ -2,8 +2,7 @@ import $ from 'jquery';
 
 class CatInsertEventAjaxParent {
   constructor() {
-    // super();
-    // this.init();
+    this.init();
     // COLLECTING ELEMENTS
     // This is the main list insert form container
     this.listInsertFormBox = $('#create-new-list-box');
@@ -23,7 +22,10 @@ class CatInsertEventAjaxParent {
   }
 
   init = () => {
-    console.log('Cat Insert Events Parent...');
+    // STARTING WEB WORKER
+    this.workerFile =
+      selflistData.root_url + '/wp-content/themes/_webworkers/WebWorker.js';
+    this.worker = new Worker(this.workerFile);
   };
 
   catSubmitHandler = (e) => {
@@ -78,7 +80,7 @@ class CatInsertEventAjaxParent {
     }
 
     // CATEGORY DATA ENTRY INTO DB VIA AJAX
-    console.log(this.ajaxFunction);
+    // console.log(this.ajaxFunction);
 
     $.ajax({
       url: this.ajaxUrl,
@@ -93,16 +95,14 @@ class CatInsertEventAjaxParent {
     })
       .done((res) => {
         // console.log(res);
-        // console.log('res.main_cat : ', res.main_cat);
-        // console.log('res.primo_cat : ', res.primo_cat);
-        // console.log('res.secondo_cat : ', res.secondo_cat);
-        // console.log('res.terzo_cat : ', res.terzo_cat);
-
         if (res.main_cat || res.primo_cat || res.secondo_cat || res.terzo_cat) {
           console.log(res);
           console.log('Ajax Main Cat Insert Success!');
           // STORING CAT DATA IN LOCAL STORAGE
           localStorage.setItem('catData', JSON.stringify(res));
+          // UPDATING INDEX DB DATA VIA WEB WORKER
+          this.worker.postMessage('Fetch Cats');
+          // MAKING THE UI AFTER CATEGORY CREATION
           this.makeUiAfterCatCreation();
         } else {
           $('#ajax-failed-message-1').append(res);

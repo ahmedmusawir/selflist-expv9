@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 class PublishListSummaryDisplay {
   constructor() {
-    this.init();
     // STATUS VARS
     this.listPointStatus;
     this.listPublishStatus;
@@ -12,19 +11,27 @@ class PublishListSummaryDisplay {
     this.listPointStatusBox = $('#list-point-status');
     this.listPublishStatusBox = $('#list-publish-status');
     this.listPublishForDaysBox = $('#published-for-days');
+    // STARTING WEB WORKER
+    this.workerFile =
+      selflistData.root_url + '/wp-content/themes/_webworkers/WebWorker.js';
+    this.worker = new Worker(this.workerFile);
+    // UPDATING INDEX DB WITH CAT INFO
+    this.init();
     // DISPLAY SUMMARY ON PAGE
     this.displaySummary();
   }
 
   init = () => {
-    // console.log('Display Publish Summary ...');
+    // UPDATING INDEX DB DATA VIA WEB WORKER
+    if (this.publishedPostIdBox.length) {
+      this.worker.postMessage('Fetch Cats');
+    }
   };
 
   displaySummary = () => {
     const publishObject = JSON.parse(
       localStorage.getItem('newListPublishData')
     );
-    // console.log('Publish Obj: ', publishObject);
 
     // DISPLAY POST ID
     if (this.publishedPostIdBox.length && publishObject) {

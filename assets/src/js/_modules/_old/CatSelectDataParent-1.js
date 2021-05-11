@@ -21,11 +21,11 @@ class CatSelectDataParent {
     this.init();
     // SITE ROOT URL FROM WP LOCALIZE SCRIPT
     this.siteRoot = selflistData.root_url;
-    // console.log(selflistData.root_url);
     // COLLECTION DATA
+    this.theJsonData;
     this.url = this.siteRoot + '/wp-content/uploads/categories.json';
-    this.thePromise = this.getData(this.url);
-    this.loadMainCatData(this.thePromise);
+    this.getData();
+
     // INITIALIZE UP SELECTIZE
     if ($('#select-main-cats').length) {
       this.selectMainCats = $('#select-main-cats').selectize({
@@ -59,37 +59,54 @@ class CatSelectDataParent {
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizeTerzo = this.selectTerzoCats[0].selectize;
     }
+
+    // ADDING STATE & CITY & SETTING UP THE CONTROL ELEMENT
+    // Setting up States
+    if ($('#select-all-states').length) {
+      this.selectAllStates = $('#select-all-states').selectize({
+        sortField: 'text',
+      });
+
+      // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
+      this.selectAllStateCtrl = this.selectAllStates[0].selectize;
+    }
+    // Setting up Cities
+    if ($('#select-all-cities').length) {
+      this.selectAllCities = $('#select-all-cities').selectize({
+        sortField: 'text',
+      });
+
+      // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
+      this.selectAllCityCtrl = this.selectAllCities[0].selectize;
+    }
   }
 
   init = () => {
     // console.log('Cat Data Parent ...');
   };
 
-  async getData(url) {
+  getData = async () => {
     try {
-      let response = await fetch(url);
+      let response = await fetch(this.url);
       let data = await response.json();
-      // console.log(data);
-      return data;
+      this.theJsonData = data;
+      // LOADING DATA TO MAIN SELECTIZED DROPDOWN
+      this.loadMainCatData();
     } catch (e) {
       console.log(e);
     }
-  }
+  };
 
-  loadMainCatData = (thePromise) => {
-    thePromise.then((d) => {
-      let data = d.mainCat;
-      data.map((catData) => {
-        // ADDING ITEMS DYNAMICALLY
-        const selectOptions = {
-          value: catData.mainCatId,
-          text: catData.mainCatName,
-        };
-        if (this.selectizeMain) {
-          this.selectizeMain.addOption(selectOptions);
-          // this.selectizeMain.addItem(selectOptions);
-        }
-      });
+  loadMainCatData = () => {
+    this.theJsonData.map((catData) => {
+      // ADDING ITEMS DYNAMICALLY
+      const selectOptions = {
+        value: catData.mainCatId,
+        text: catData.mainCatName,
+      };
+      if (this.selectizeMain) {
+        this.selectizeMain.addOption(selectOptions);
+      }
     });
   };
 }

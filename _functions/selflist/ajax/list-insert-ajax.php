@@ -42,7 +42,6 @@ function list_insert_ajax()
             'your_yelp' => sanitize_text_field($post_args['yelp']),
             'your_instagram' => sanitize_text_field($post_args['instagram']),
             'your_linkedin' => sanitize_text_field($post_args['linkedin']),
-            'your_google_plus' => sanitize_text_field($post_args['googlePlus']),
             'your_twitter' => sanitize_text_field($post_args['twitter']),
         ],
     ];

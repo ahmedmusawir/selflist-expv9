@@ -3,7 +3,8 @@ import { get, keys } from 'idb-keyval';
 class CatToIndexDbWebWorker {
   constructor() {
     // MAKING WEB WORKER
-    this.workerFile = selflistData.root_url + '/WebWorker.js';
+    this.workerFile =
+      selflistData.root_url + '/wp-content/themes/_webworkers/WebWorker.js';
     this.worker = new Worker(this.workerFile);
     // BRINGING CATEGORY DATA ONCE FIRST TIME
     this.startWebWorkerOnce();
@@ -16,8 +17,6 @@ class CatToIndexDbWebWorker {
     await keys()
       .then((keys) => {
         keys.forEach((key) => {
-          console.info('The Key is: ', key);
-
           if (key == 'catInfo') {
             this.keyExists = true;
           }
@@ -27,15 +26,13 @@ class CatToIndexDbWebWorker {
         console.log('Key Check Failed [CatToIndexDbWebWorker.js]', err)
       );
 
-    console.log('Key Exists: ', this.keyExists);
-
     // WHEN THE KEY NOT PRESENT
     if (this.keyExists != true) {
       // SENDING WORK MESSAGES
       // this.worker.postMessage('Get Started');
       this.worker.postMessage('Fetch Cats');
     } else {
-      console.log('DB not updated...');
+      console.log('DB not updated... [CatToIndexDbWebWorker.js]');
     }
   };
 

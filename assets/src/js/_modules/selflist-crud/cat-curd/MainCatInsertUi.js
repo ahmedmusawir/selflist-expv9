@@ -12,8 +12,6 @@ class MainCatInsertUi extends CatInsetUiParent {
     // This is the Cancel button on the Main Cat Insert Form (at the bottom)
     this.mainCatValidationCancelBtn = $('#main-cat-validation-cancel-btn');
 
-    // this.setEvents();
-
     // SETTING EVENTS
     this.setEvents();
   }

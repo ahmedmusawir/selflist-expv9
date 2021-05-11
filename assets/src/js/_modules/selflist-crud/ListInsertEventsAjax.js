@@ -61,7 +61,6 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
     const yelp = this.socialYelp;
     const instagram = this.socialInstagram;
     const linkedin = this.socialLinkedin;
-    const googlePlus = this.socialGooglePlus;
     const twitter = this.socialTwitter;
 
     // UNIT TESTNG Debugging Output
@@ -74,7 +73,6 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
     console.log(`YELP: ${yelp}`);
     console.log(`INSTAGRAM: ${instagram}`);
     console.log(`LINKEDIN: ${linkedin}`);
-    console.log(`GOOGLEPLUS: ${googlePlus}`);
     console.log(`TWITTER: ${twitter}`);
 
     // PREPARING FORM DATA FOR REST API
@@ -96,7 +94,6 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
       yelp, // ACF Item
       instagram, // ACF Item
       linkedin, // ACF Item
-      googlePlus, // ACF Item
       twitter, // ACF Item
     };
 

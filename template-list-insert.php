@@ -18,29 +18,29 @@ get_header();
 ?>
 <style>
 .error {
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 input {
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 textarea {
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 input::placeholder {
-  font-size: .8rem !important;
+    font-size: .8rem !important;
 }
 
 textarea::placeholder {
-  font-size: .8rem !important;
+    font-size: .8rem !important;
 }
 
 #lister-facebook-error,
@@ -49,123 +49,124 @@ textarea::placeholder {
 #lister-yelp-error,
 #lister-linkedin-error,
 #lister-google-plus-error {
-  position: absolute;
-  top: 125%;
-  left: 60%;
+    position: absolute;
+    top: 125%;
+    left: 60%;
 }
 </style>
 
 <main id="primary" class="site-main container-fluid">
 
-  <header>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
-      integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
-  </header>
+    <header>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+            integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    </header>
 
-  <article class="main-content">
+    <article class="main-content">
 
-    <div class="row">
-      <!-- LIST INSERT BLOCK -->
-      <section class="col-12 col-sm-12 col-md-6">
+        <div class="row">
+            <!-- LIST INSERT BLOCK -->
+            <section class="col-12 col-sm-12 col-md-6">
 
-        <article id="create-new-list-box" class="card p-3  animate__animated animate__zoomIn">
+                <article id="create-new-list-box" class="card p-3  animate__animated animate__zoomIn">
 
-          <!-- MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
+                    <!-- MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation');?>
+                    <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation');?>
 
-          <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
+                    <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <!-- CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
+                    <!-- CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box');?>
+                    <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box');?>
 
-          <!-- END CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
+                    <!-- END CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
-          <!-- STATE & CITY SELECTIZE CHOICE BOX -->
+                    <!-- STATE & CITY SELECTIZE CHOICE BOX -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box');?>
-          <?php get_template_part('_custom-template-parts/city-insert-form');?>
+                    <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box');?>
+                    <?php get_template_part('_custom-template-parts/city-insert-form');?>
 
-          <!-- END STATE & CITY SELECTIZE CHOICE BOX -->
+                    <!-- END STATE & CITY SELECTIZE CHOICE BOX -->
 
-          <!-- THE MAIN FORM INPUTS START -->
+                    <!-- THE MAIN FORM INPUTS START -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-pg-main-inputs');?>
+                    <?php get_template_part('_custom-template-parts/list-insert-pg-main-inputs');?>
 
-          <!-- END THE MAIN FORM INPUTS  -->
+                    <!-- END THE MAIN FORM INPUTS  -->
 
-        </article> <!-- END OF id="create-new-list-box" -->
+                </article> <!-- END OF id="create-new-list-box" -->
 
-        <!-- START OF MAIN CAT INSERT FORM -->
+                <!-- START OF MAIN CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-main-cat-insert-form');?>
+                <?php get_template_part('_custom-template-parts/insert-pg-main-cat-insert-form');?>
 
-        <!-- END OF MAIN CAT INSERT FORM -->
+                <!-- END OF MAIN CAT INSERT FORM -->
 
-        <!-- START OF PRIMO CAT INSERT FORM -->
+                <!-- START OF PRIMO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-primo-cat-insert-form');?>
+                <?php get_template_part('_custom-template-parts/insert-pg-primo-cat-insert-form');?>
 
-        <!-- END OF PRIMO CAT INSERT FORM -->
+                <!-- END OF PRIMO CAT INSERT FORM -->
 
-        <!-- START OF SECONDO CAT INSERT FORM -->
+                <!-- START OF SECONDO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-secondo-cat-insert-form');?>
+                <?php get_template_part('_custom-template-parts/insert-pg-secondo-cat-insert-form');?>
 
-        <!-- END OF SECONDO CAT INSERT FORM -->
+                <!-- END OF SECONDO CAT INSERT FORM -->
 
-        <!-- START OF TERZO CAT INSERT FORM -->
+                <!-- START OF TERZO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-terzo-cat-insert-form');?>
+                <?php get_template_part('_custom-template-parts/insert-pg-terzo-cat-insert-form');?>
 
-        <!-- END OF TERZO CAT INSERT FORM -->
+                <!-- END OF TERZO CAT INSERT FORM -->
 
-        <!-- LIST INSERT USER VALIDATION BOX -->
+                <!-- LIST INSERT USER VALIDATION BOX -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-user-validation-box');?>
+                <?php get_template_part('_custom-template-parts/insert-pg-user-validation-box');?>
 
-        <!-- END OF LIST INSERT USER VALIDATION BOX -->
-
-
-      </section>
-      <!-- LEFT COLUMN ENDS HERE -->
+                <!-- END OF LIST INSERT USER VALIDATION BOX -->
 
 
-      <!-- CATEGORY SEARCH COLUMN [RIGHT COLUMN STARTS]-->
-      <section class="col-12 col-sm-12 col-md-6">
-        <div id="primary" class="site-main container pt-5">
-
-          <!-- <hr> -->
-
-          <section id="selflist-search-input-box" class="selflist-search-input-box">
-
-            <input type="text" id="cat-search-input-json" class="selflist-search-input">
-            <i class="fas fa-search"></i>
-
-          </section>
+            </section>
+            <!-- LEFT COLUMN ENDS HERE -->
 
 
-          <div id="category-search-json-result" class="moose-cols">
+            <!-- CATEGORY SEARCH COLUMN [RIGHT COLUMN STARTS]-->
+            <section class="col-12 col-sm-12 col-md-6">
+                <div id="primary" class="site-main container pt-">
+
+                    <!-- <hr> -->
+                    <h5>Find your category...</h5>
+
+                    <section id="selflist-search-input-box" class="selflist-search-input-box">
+
+                        <input type="text" id="cat-search-input-json" class="selflist-search-input">
+                        <i class="fas fa-search"></i>
+
+                    </section>
 
 
-          </div> <!-- #main -->
+                    <div id="category-search-json-result" class="moose-cols">
 
-      </section>
-    </div>
 
-  </article>
+                    </div> <!-- #main -->
 
-  <footer>
-    <script>
-    // $(document).ready(function() {
-    //   $('select').selectize({
-    //     sortField: 'text'
-    //   });
-    // });
-    </script>
-  </footer>
+            </section>
+        </div>
+
+    </article>
+
+    <footer>
+        <script>
+        // $(document).ready(function() {
+        //   $('select').selectize({
+        //     sortField: 'text'
+        //   });
+        // });
+        </script>
+    </footer>
 
 </main><!-- #main -->
 

@@ -44,7 +44,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.socialYelp;
     this.socialInstagram;
     this.socialLinkedin;
-    this.socialGooglePlus;
     this.socialTwitter;
   }
 
@@ -76,7 +75,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     $('#list-user-validation-yelp').text(this.socialYelp);
     $('#list-user-validation-instagram').text(this.socialInstagram);
     $('#list-user-validation-linkedin').text(this.socialLinkedin);
-    $('#list-user-validation-google-plus').text(this.socialGooglePlus);
     $('#list-user-validation-twitter').text(this.socialTwitter);
 
     // CHECKING FOR MISSING MAIN CATEGORY
@@ -228,7 +226,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.socialYelp = $('#lister-yelp').val();
     this.socialInstagram = $('#lister-instagram').val();
     this.socialLinkedin = $('#lister-linkedin').val();
-    this.socialGooglePlus = $('#lister-google-plus').val();
     this.socialTwitter = $('#lister-twitter').val();
   };
 }

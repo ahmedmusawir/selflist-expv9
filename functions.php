@@ -142,14 +142,19 @@ require get_theme_file_path('/_functions/selflist/city_state/get_city_state.php'
 require get_theme_file_path('/_functions/selflist/rest/city-state-to-rest.php');
 require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/city-insert-ajax.php');
+
 // MAIN LIST INSERT: HAD TO BE RE-WRITTEN DUE TO TAX_INPUT NOT WORKING. USING PHP NOW INSTEAD OF REST
 require get_theme_file_path('/_functions/selflist/ajax/list-insert-ajax.php');
+
 // DELSIT AJAX
 require get_theme_file_path('/_functions/selflist/ajax/delist-status-update-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/relist-data-update-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/delete-list-permanently-ajax.php');
+
 // MEMBER PROFILE DATA INSERT AJAX
 require get_theme_file_path('/_functions/selflist/ajax/profile-data-insert-ajax.php');
+require get_theme_file_path('/_functions/selflist/ajax/profile_pass_update_ajax.php');
+
 // FLAG RELATED 
 require get_theme_file_path('/_functions/selflist/cpt/flag-post-type.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-flag-ajax.php');
