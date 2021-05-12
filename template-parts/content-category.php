@@ -22,11 +22,12 @@ input[type=checkbox] {
     transform: scale(2.2);
     /* padding: 10px; */
     margin-top: .5rem;
-
 }
 
-/* input[type="checkbox"]:checked:before {
+input[type="checkbox"]:checked:before {
     font-family: "FontAwesome";
+    font-size: .9rem;
+    color: black;
     content: "\f14a";
     background: transparent;
     position: absolute;
@@ -34,16 +35,9 @@ input[type=checkbox] {
     width: 12px;
     height: 12px;
     left: 50%;
-    top: 22%;
+    top: 19.24%;
     transform: translate(-50%, -50%);
-} */
-
-/* DID NOT WORK */
-/* 
-input[type=checkbox]:checked+label:after {
-  background-color: red !important;
-  color: red;
-} */
+}
 </style>
 
 <article id="post-<?php the_ID();?>" <?php post_class('post-item animate__animated');?>>
@@ -214,6 +208,7 @@ if ('post' === get_post_type()):
             <div class="flex-icon-item ml-3">
                 <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox ml-5" autocomplete="off"
                     data-hmu="<?php echo get_field('your_email'); ?>" style="background: black;">
+                <span class="checkmark"></span>
                 <small class="" style="margin-left: 2.5rem;">HMU</small>
             </div>
 
