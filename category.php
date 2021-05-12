@@ -22,66 +22,66 @@ $current_post_count = $current_category->count;
 ?>
 <style>
 .error {
-  display: block;
-  border: 1px solid red;
-  border-radius: 10px;
-  background-color: #ffdddc;
-  padding: .5rem;
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    display: block;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: #ffdddc;
+    padding: .5rem;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 input {
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 textarea {
-  color: red;
-  font-size: .8rem;
-  font-weight: bold;
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 input::placeholder {
-  font-size: .8rem !important;
+    font-size: .8rem !important;
 }
 
 textarea::placeholder {
-  font-size: .8rem !important;
+    font-size: .8rem !important;
 }
 </style>
 <main id="primary" class="site-main container">
 
-  <button id="filter-by-state-city-btn" class="btn btn-outline-danger mb-2">Filter by State & City</button>
-  <button class="btn btn-outline-dark mb-2" onclick='window.location.reload(true);'>Reset</button>
-  <!-- STATE & CITY CATEGORY PROTOTYPING STARTS -->
-  <?php 
+    <button id="filter-by-state-city-btn" class="btn btn-outline-danger mb-2">Filter by State & City</button>
+    <button class="btn btn-outline-dark mb-2" onclick='window.location.reload(true);'>Reset</button>
+    <!-- STATE & CITY CATEGORY PROTOTYPING STARTS -->
+    <?php 
     // Getting all States (Parent Taxonomies)
     $all_states = get_terms(['taxonomy' => 'states', 'parent' => 0 ]);
     get_state_and_cities($all_states, $current_cat_id);
   ?>
-  <!-- STATE & CITY CATEGORY PROTOTYPING ENDS -->
+    <!-- STATE & CITY CATEGORY PROTOTYPING ENDS -->
 
-  <div class="row">
-    <div class="col-md-9">
+    <div class="row">
+        <div class="col-md-9">
 
-      <section id="selflist-search-input-box" class="selflist-search-input-box">
+            <section id="selflist-search-input-box" class="selflist-search-input-box">
 
-        <input type="text" id="post-search-input" class="selflist-search-input">
-        <i class="fas fa-search"></i>
+                <input type="text" id="post-search-input" class="selflist-search-input">
+                <i class="fas fa-search"></i>
 
-      </section>
+            </section>
 
-      <?php if ( have_posts() ) : ?>
+            <?php if ( have_posts() ) : ?>
 
-      <header class="page-header">
-        <!-- HMU BUTTON -->
-        <a id="start-hmu-btn" href="#" class="btn btn-dark btn-sm float-right disabled">START HMU </a>
-        <!-- END HMU BUTTON -->
+            <header class="page-header">
+                <!-- HMU BUTTON -->
+                <a id="start-hmu-btn" href="#" class="btn btn-dark btn-sm float-right disabled">START HMU </a>
+                <!-- END HMU BUTTON -->
 
-        <?php
+                <?php
 			the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
         </h3>' );
         // the_archive_description( '<div class="archive-description">', '</div>' );
@@ -89,9 +89,9 @@ textarea::placeholder {
 
 
 
-      </header><!-- .page-header -->
+            </header><!-- .page-header -->
 
-      <?php
+            <?php
 		/* Start the Loop */
 		while ( have_posts() ) :
       the_post();
@@ -131,23 +131,23 @@ textarea::placeholder {
 
 	endif;
 	?>
-    </div>
-    <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
 
-      <article class="category-sidebar">
-        <ul class="primo">
-          <?php 
+            <article class="category-sidebar">
+                <ul class="primo">
+                    <?php 
         
         
         $cat_list = get_selflist_sub_cats($current_cat_id);
         
       ?>
-        </ul>
+                </ul>
 
-      </article>
+            </article>
 
+        </div>
     </div>
-  </div>
 
 </main><!-- #main -->
 
@@ -156,40 +156,41 @@ textarea::placeholder {
 
 <!-- Modal -->
 <div class="modal fade text-center" id="the-flag-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <!-- <div class="modal-dialog" role="document"> -->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header justify-content-center bg-danger">
-        <h5 class="modal-title text-light" id="exampleModalLabel">Flag This List</h5>
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    aria-hidden="true">
+    <!-- <div class="modal-dialog" role="document"> -->
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center bg-danger">
+                <h5 class="modal-title text-light" id="exampleModalLabel">Flag This List</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
-      </div>
-      <!-- <div class="modal-body">
+            </div>
+            <!-- <div class="modal-body">
         <form action="" class="form">
 
         </form>
       </div> -->
-      <div class="modal-footer justify-content-center">
+            <div class="modal-footer justify-content-center">
 
-        <form id="flag-insert-form" class="form">
-          <label for="flag-textara">Insert your reason for flagging this list:</label>
-          <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10" required
-            autocomplete="off">
+                <form id="flag-insert-form" class="form">
+                    <label for="flag-textara">Insert your reason for flagging this list:</label>
+                    <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10"
+                        required autocomplete="off">
           </textarea>
-          <small class="float-right mb-3">140 Character Limit</small>
-          <button id="flag-ajax-submit-btn" type="submit" class="btn btn-primary btn-block flag-ajax-submit-btn">
-            Flag It Now
-          </button>
-          <button id="flag-close-btn" type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
-            Cancel
-          </button>
-        </form>
+                    <small class="float-right mb-3">140 Character Limit</small>
+                    <button id="flag-ajax-submit-btn" type="submit"
+                        class="btn btn-primary btn-block flag-ajax-submit-btn">
+                        Flag It Now
+                    </button>
+                    <button id="flag-close-btn" type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
+                        Cancel
+                    </button>
+                </form>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- END FLAG FORM MODAL -->

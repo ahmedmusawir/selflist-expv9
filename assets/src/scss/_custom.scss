@@ -5,6 +5,7 @@
 /*==============================
 =            COLORS            =
 ==============================*/
+
 $cg-primary: red; //light greenish blue
 $cg-secondary: black; //dark blue
 $cg-third: red;
@@ -43,7 +44,10 @@ $danger: $red !default;
 
 // $body-bg: lighten($indigo, 45%);
 // $body-bg: lighten($cg-primary, 45%);
-
+$theme-colors: (
+  'primary': red,
+  'danger': #ff4136,
+);
 /*=====  End of COLORS  ======*/
 
 /**
