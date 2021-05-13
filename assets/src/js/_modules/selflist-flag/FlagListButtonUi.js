@@ -23,7 +23,7 @@ class FlagListButtonUi {
   }
 
   init = () => {
-    console.log('Flag flagListBtn ui');
+    // console.log('Flag flagListBtn ui');
   };
 
   setEvents = () => {

@@ -9,47 +9,24 @@ class SelflistCatSearchIndxDb {
     this.typingTimer;
     this.spinnerVisible;
     this.previousValue;
-    this.keyExists = false;
     this.search = $('#cat-search-input-json');
     this.searchResultBox = $('#category-search-json-result');
     // SITE ROOT URL FROM WP LOCALIZE SCRIPT
     this.siteRoot = selflistData.root_url;
     // COLLECTION DATA
     this.theJsonData;
-    // SITE ROOT URL FROM WP LOCALIZE SCRIPT
-    this.siteRoot = selflistData.root_url;
-    // COLLECTION DATA FORM REST AS A FALLBACK
-    this.theJsonData;
-    this.url = this.siteRoot + '/wp-json/selflist/v1/catInfo';
-    // CHECKING LOCAL INDEXED DB FOR CATINFO DATA KEY
-    this.checkData();
+    // JSON FILE NO LONGER BEING USED
+    // this.url = this.siteRoot + '/wp-content/uploads/categories.json';
+    // GETTING DATA FROM LOCAL INDEXED DB
+    this.getData();
+
     // SETTING EVENTS
     this.setEvents();
     // this.init();
   }
 
   init = () => {
-    // console.log('Search from Indx DB ...');
-  };
-
-  checkData = async () => {
-    // CHECKING FOR THE KEY IN INDEXED DB
-    await keys().then((keys) => {
-      keys.forEach((key) => {
-        // console.info('The Key is: ', key);
-        if (key == 'catInfo') {
-          // GETTING DATA FROM LOCAL INDEXED DB
-          this.getData();
-          this.keyExists = true;
-          // console.log('From checkData', this.keyExists);
-        }
-      });
-    });
-
-    // console.log('Key Exists: ', this.keyExists);
-    if (!this.keyExists) {
-      this.getRestData();
-    }
+    console.log('Search from Indx DB ...');
   };
 
   getData = async () => {
@@ -66,18 +43,6 @@ class SelflistCatSearchIndxDb {
           err
         )
       );
-  };
-
-  getRestData = async () => {
-    try {
-      let response = await fetch(this.url);
-      let data = await response.json();
-      // CLEARING THE ZERO LIST COUNT ONES
-      this.theJsonData = data.filter((main) => main.mainCount != 0);
-      console.info(this.theJsonData);
-    } catch (e) {
-      console.log(e);
-    }
   };
 
   setEvents = () => {

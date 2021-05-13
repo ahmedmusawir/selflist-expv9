@@ -22,7 +22,7 @@ class ListFormAutoFiller {
   }
 
   init = () => {
-    console.log('List Auto Filler...');
+    // console.log('List Auto Filler...');
   };
 
   getProfileData = () => {

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'jquery-validation';
 import 'jquery-validation/dist/additional-methods.js';
-import FlagListFormAjax from './FlagListFormAjax';
+import FlagListFormAjax from '../selflist-flag/FlagListFormAjax';
 
 class FlagListFormValidation extends FlagListFormAjax {
   constructor() {

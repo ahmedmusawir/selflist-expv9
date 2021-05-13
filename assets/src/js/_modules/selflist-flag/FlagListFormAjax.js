@@ -43,7 +43,7 @@ class FlagListFormAjax {
   }
 
   init = () => {
-    console.log('Flag submit Ajax');
+    // console.log('Flag submit Ajax');
   };
 
   disableEnterKeyInForm = () => {

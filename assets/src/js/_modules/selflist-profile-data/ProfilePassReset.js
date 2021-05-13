@@ -18,7 +18,7 @@ class ProfilePassReset {
   }
 
   init = () => {
-    console.log('Pass Reset ...');
+    // console.log('Pass Reset ...');
   };
 
   // MAIN FORM VALIDATION
