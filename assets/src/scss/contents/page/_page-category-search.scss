@@ -7,9 +7,6 @@
 .page-template-template-category-search,
 .page-template-template-category-search-json,
 .page-template-template-category-search-members {
-  // transition: all 2.5s ease;
-  // border: 4px dotted dodgerblue;
-
   // SEARCH INPUT BOX
   .selflist-search-input-box {
     // border: 4px dotted red;
@@ -50,7 +47,14 @@
     // -o-transition: all 500ms ease;
     // transition: all 500ms ease;
 
+    // THE CARD CATEGORY ITEM
+    .card.card-moose {
+      // border: 1rem dotted dodgerblue;
+      width: 100%;
+    }
+
     ul {
+      // border: 1rem dotted dodgerblue;
       // transition: all 0.5s ease;
       list-style: none;
       li {

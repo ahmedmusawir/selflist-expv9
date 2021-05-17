@@ -30,7 +30,7 @@
 
 // @import "contents/page/page-dashboard";
 @import 'contents/page/page-global';
-@import 'contents/page/page-selflist';
+@import 'contents/page/page-selflist-home';
 @import 'contents/page/page-selflist-listings-index';
 @import 'contents/page/page-selflist-list-insert';
 @import 'contents/page/page-selflist-customer-profile';
@@ -102,7 +102,7 @@
 ==========================================*/
 
 // @import "project_globals/asm-globals";
-@import "project_globals/selflist-gravity";
+@import 'project_globals/selflist-gravity';
 
 /*=====  End of PROJECT GLOBALS ======*/
 

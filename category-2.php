@@ -77,16 +77,17 @@ textarea::placeholder {
             <?php if ( have_posts() ) : ?>
 
             <header class="page-header">
-
-                <?php
-                    the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
-                </h3>' );
-                // the_archive_description( '<div class="archive-description">', '</div>' );
-                ?>
-
                 <!-- HMU BUTTON -->
                 <a id="start-hmu-btn" href="#" class="btn btn-dark btn-sm float-right disabled">START HMU </a>
                 <!-- END HMU BUTTON -->
+
+                <?php
+			the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
+        </h3>' );
+        // the_archive_description( '<div class="archive-description">', '</div>' );
+        ?>
+
+
 
             </header><!-- .page-header -->
 
