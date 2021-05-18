@@ -8,7 +8,8 @@
   width: 100%;
   display: block;
   clear: both;
-  font-family: 'Lato', sans-serif;
+  // font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   background: #313131;
 
@@ -81,6 +82,11 @@
     line-height: 1.3em;
     color: white;
     color: hsl(0, 0%, 100%);
+
+    @media (max-width: 429px) {
+      font-size: 0.7rem;
+      padding: 0.5rem 0.45rem;
+    }
   }
 
   // CURRENT PAGE HOVER

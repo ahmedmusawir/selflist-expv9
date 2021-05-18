@@ -138,7 +138,7 @@ textarea::placeholder {
                 <div id="primary" class="site-main container pt-">
 
                     <!-- <hr> -->
-                    <h5>Find your category...</h5>
+                    <h5 id="insert-search-cat-header">Find your category...</h5>
 
                     <section id="selflist-search-input-box" class="selflist-search-input-box">
 

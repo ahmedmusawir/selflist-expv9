@@ -79,8 +79,8 @@ textarea::placeholder {
             <header class="page-header">
 
                 <?php
-                    the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
-                </h3>' );
+                the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . 
+                '</span></h3>' );
                 // the_archive_description( '<div class="archive-description">', '</div>' );
                 ?>
 

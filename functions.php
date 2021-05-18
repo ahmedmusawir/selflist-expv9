@@ -160,6 +160,11 @@ require get_theme_file_path('/_functions/selflist/cpt/flag-post-type.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-flag-ajax.php');
 
 
+// OOP PHP TEST
+require get_theme_file_path('/_oop-functions/inc/class-person-object.php');
+
+
+
 
 
 

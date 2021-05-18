@@ -25,7 +25,7 @@ function get_cities( $state, $current_cat_id ) {
       // MAKING CITY BTN IDs
       $city_btn_id = "$state-$city_obj->slug-btn";
 
-      echo '<button id="'. $city_btn_id .'" class="btn btn-outline-primary btn-sm list-inline-item city-button">';
+      echo '<button id="'. $city_btn_id .'" class="btn btn-outline-primary btn-sm list-inline-item city-button mb-1">';
       echo 
       '<small data-state="'. $state .'" data-city="'. $city_obj->slug .'" data-catid="'. $current_cat_id .'">' 
       . $city_obj->name .

@@ -2,8 +2,33 @@
  * LIST INSERT PAGE STYLES
  */
 
-.page-template.page-template-template-list-insert {
+.page-template-template-list-insert {
   // border: 1rem dotted red;
+  // INPUTS IN GENERAL
+  @media (max-width: 450px) {
+    input {
+      font-size: 0.7rem;
+    }
+  }
+  // SELECTIZE CAT BOX
+  #category-choice-box {
+    // border: 1rem dotted red;
+    .btn-block {
+      margin-bottom: 0.5rem;
+      @media (min-width: 768px) and (max-width: 950px) {
+        font-size: 0.9rem;
+        width: 120px;
+        margin-left: -20px;
+      }
+    }
+  }
+
+  // SEARCH INPUT HEADING
+  #insert-search-cat-header {
+    @media (max-width: 768px) {
+      margin-top: 2rem;
+    }
+  }
 
   // SEARCH INPUT BOX
   .selflist-search-input-box {
@@ -32,6 +57,10 @@
       color: white;
       padding-right: 1rem;
       padding-top: 0.75rem;
+
+      @media (max-width: 857px) {
+        display: none;
+      }
     }
   }
 
@@ -45,10 +74,16 @@
 
     .card-moose {
       width: 48% !important;
-      // width: 200px !important;
       border: 1px solid crimson;
       margin-right: 2px;
       margin-left: 2px;
+
+      @media (min-width: 768px) and (max-width: 1060px) {
+        width: 100% !important;
+      }
+      @media (max-width: 500px) {
+        width: 100% !important;
+      }
     }
 
     ul {

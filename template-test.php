@@ -12,16 +12,22 @@
  * @package cyberize-app-dev
  */
 
-get_header();
+get_header('loggedout');
 ?>
 
 <main id="primary" class="site-main container">
 
-  <header id="header-test" class="site-header container py-5 text-center">
+    <header id="header-test" class="site-header container py-5">
 
-    <h1>Copy This Template for testing ...</h1>
+        <h1>Copy This Template for testing ...</h1>
 
-  </header><!-- #masthead -->
+        <?php 
+          echo 'Result goes here..';
+          $person = new Person_Object('Moose');
+          echo $person->get_name();
+        ?>
+
+    </header><!-- #masthead -->
 
 </main><!-- #main -->
 
