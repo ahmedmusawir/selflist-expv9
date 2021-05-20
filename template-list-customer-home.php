@@ -87,8 +87,9 @@ textarea::placeholder {
         <!-- LEFT PROFILE MENU COLUMN ENDS -->
         <!-- RIGHT PROFILE CONTENT COLUMN -->
         <div class="col-sm-12 col-md-8">
-            <a href="/list-insert/" class="btn btn-danger float-right btn-lg">Add New List</a>
-            <!-- <button id="the-profile-menu-btn" class="btn btn-dark float-right mr-2">Menu</button> -->
+            <a href="/list-insert/" class="btn btn-danger float-right btn-lg d-none d-lg-block">Add New List</a>
+            <a href="/list-insert/" class="btn btn-danger float-right d-none d-sm-block d-lg-none">Add New List</a>
+            <a href="/list-insert/" class="btn btn-danger float-right btn-sm d-block d-sm-none">Add New List</a>
             <h3 class="text-uppercase"><small class="font-weight-bold">Customer Profile</small></h3>
             <h2 class="h2">Welcome, <?php echo $current_user->user_firstname . ' ' . $current_user->user_lastname; ?>
             </h2>

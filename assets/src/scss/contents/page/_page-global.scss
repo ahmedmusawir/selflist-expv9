@@ -11,5 +11,9 @@
   .type-page {
     // border: 3px dotted green;
     padding-top: 8rem;
+
+    @media (max-width: 991px) {
+      padding-top: 1rem;
+    }
   }
 }

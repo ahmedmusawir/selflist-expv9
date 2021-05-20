@@ -6,8 +6,18 @@
 
 .customer-profile-page {
   // border: 4px dotted dodgerblue;
+  @media (max-width: 400px) {
+    input {
+      font-size: 0.8rem;
+    }
+  }
   #profile-menu {
     // border: 4px dotted dodgerblue;
+    padding-inline-start: 0px;
+    @media (max-width: 767px) {
+      margin-bottom: 3rem;
+    }
+
     li {
       list-style: none;
       border: 1px solid $cg-secondary;

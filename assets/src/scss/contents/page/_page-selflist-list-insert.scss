@@ -11,7 +11,8 @@
     }
   }
   // SELECTIZE CAT BOX
-  #category-choice-box {
+  #category-choice-box,
+  #state-city-choice-box {
     // border: 1rem dotted red;
     .btn-block {
       margin-bottom: 0.5rem;
@@ -25,6 +26,7 @@
 
   // SEARCH INPUT HEADING
   #insert-search-cat-header {
+    font-weight: 700;
     @media (max-width: 768px) {
       margin-top: 2rem;
     }
