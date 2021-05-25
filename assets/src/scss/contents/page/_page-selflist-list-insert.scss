@@ -5,11 +5,15 @@
 .page-template-template-list-insert {
   // border: 1rem dotted red;
   // INPUTS IN GENERAL
-  @media (max-width: 450px) {
-    input {
-      font-size: 0.7rem;
+  input,
+  textarea {
+    font-size: 0.7rem;
+
+    @media (min-width: 800px) {
+      font-size: 1rem;
     }
   }
+
   // SELECTIZE CAT BOX
   #category-choice-box,
   #state-city-choice-box {
@@ -17,10 +21,34 @@
     .btn-block {
       margin-bottom: 0.5rem;
       @media (min-width: 768px) and (max-width: 950px) {
-        font-size: 0.9rem;
-        width: 120px;
+        font-size: 0.8rem;
+        width: 110px;
         margin-left: -20px;
       }
+    }
+  }
+
+  // CATEGORY INSERT BOXES
+  #main-cat-insert-box,
+  #primo-cat-insert-box,
+  #secondo-cat-insert-box,
+  #terzo-cat-insert-box,
+  #city-insert-form-box {
+    padding: 1rem !important;
+
+    @media (min-width: 800px) {
+      padding: 3rem !important;
+    }
+  }
+
+  // LIST USER VALIDATION WINDOW
+  #list-insert-user-validation-box {
+    padding: 0rem !important;
+    font-size: 0.7rem !important;
+
+    @media (min-width: 800px) {
+      padding: 3rem !important;
+      font-size: 1rem !important;
     }
   }
 

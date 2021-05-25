@@ -71,7 +71,6 @@ import HmuLinkMaker from './_modules/selflist-hmu/HmuLinkMaker';
 // FLAG RELATED
 import FlagListButtonUi from './_modules/selflist-flag/FlagListButtonUi';
 import FlagListFormAjax from './_modules/selflist-flag/FlagListFormAjax';
-import FlagListFormValidation from './_modules/selflist-flag/FlagListFormValidation';
 
 class App {
   constructor() {
@@ -177,7 +176,6 @@ class App {
     // Flag Related
     new FlagListButtonUi();
     new FlagListFormAjax();
-    // new FlagListFormValidation();
   }
 
   runTestCode = () => {

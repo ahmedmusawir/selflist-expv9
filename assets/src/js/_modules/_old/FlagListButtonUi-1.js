@@ -29,13 +29,18 @@ class FlagListButtonUi {
   };
 
   flagStatus = () => {
+    // console.log(this.flagBtn);
     this.flagListBtn.map((indx, btn) => {
+      // console.log(indx, btn.dataset.listId);
+      // console.log(indx, btn.dataset.key);
       // FROM INDEX DB
       get(btn.dataset.key)
         .then((data) => {
+          // console.info(data.listId);
           if (data) {
             if (data.listId == btn.dataset.listId && data.disabled == true) {
               $(btn).addClass('disabled').off('click');
+              // btn.classList.add('disabled');
             }
           }
         })

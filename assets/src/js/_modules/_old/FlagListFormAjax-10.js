@@ -29,7 +29,10 @@ class FlagListFormAjax {
     $.validator.addMethod(
       'lettersnumbersdotsonly',
       function (value, element) {
-        return this.optional(element) || /^[A-Za-z][a-z0-9\. ]+$/i.test(value);
+        return (
+          this.optional(element) || /^[A-Za-z][a-z0-9\. ]+$/i.test(value)
+          // this.optional(element) || /^[A-Za-z\-d ][a-z0-9 ]+$/i.test(value)
+        );
       },
       'Letters and numbers only please ... <br>(cannot begin with numbers.)'
     );
@@ -54,6 +57,14 @@ class FlagListFormAjax {
         return false;
       }
     });
+  };
+
+  clickFlagAjaxHandler = (e) => {
+    e.preventDefault();
+
+    // CALLING VALIDATION
+    // this.testApp();
+    // this.validateFlagForm();
   };
 
   // MAIN FORM VALIDATION
@@ -84,11 +95,12 @@ class FlagListFormAjax {
   };
 
   insertFlagDataAjaxHandler = (e) => {
+    console.log(e.target);
     this.flagKey = e.target.dataset.key;
     // JQUERY BUG!!
     // the following doesn't work! Use JS
     // let flagKey = $(e.target).data('key');
-
+    console.log('Flag Key: ', this.flagKey);
     // GET FLAG INFO DATA FROM INDEXED DB
     get(this.flagKey)
       .then((data) => {

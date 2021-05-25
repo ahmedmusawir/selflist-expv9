@@ -17,6 +17,12 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
     this.userValidationButton = $('#list-user-validation-button');
     // The Cancel button
     this.userValidationCancellButton = $('#list-insert-cancel-btn');
+    // BUG FIX
+    // Checking for City Insert form open or not. Cuz if it is open then clicking
+    // the Submit button throws an error
+    this.cityInsertFormBox = $('#city-insert-form-box');
+    // The following is to focus on the City Insert Input
+    this.cityInsertInput = $('#city-input-element');
     // Setting up events
     this.setEvents();
     // ADDING LETTERS & SPACES ONLY METHOD TO JQ VALIDATION
@@ -207,6 +213,12 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           !this.socialTwitter
         ) {
           alert('You must have at least one Social Link');
+        } else if (!this.cityInsertFormBox.hasClass('d-none')) {
+          alert('Please insert a City or hit cancel!');
+          // SCROLL TO TOP
+          window.scrollTo(0, 0);
+          this.cityInsertInput.trigger('focus');
+          // this.cityInsertInput.focus();
         } else {
           // OPEN THE USER VALIDATION SCREEN
           this.displayValidationBox();

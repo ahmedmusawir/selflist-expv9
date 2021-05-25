@@ -3,6 +3,7 @@
  * UPDATE PROFILE PASSWORD
  */
 
+// add_action('wp_ajax_noprev_profile_pass_update_ajax', 'profile_pass_update_ajax');
 add_action('wp_ajax_profile_pass_update_ajax', 'profile_pass_update_ajax');
 
  function profile_pass_update_ajax() {

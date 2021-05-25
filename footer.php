@@ -13,19 +13,19 @@
 
 
 <footer id="colophon" class="site-footer navbar fixed-bottom navbar-light bg-light">
-  <div class="site-info">
-    &copy; <?php echo date("Y"); ?> SelfLIST
-  </div><!-- .site-info -->
+    <div class="site-info">
+        &copy; <?php echo date("Y"); ?> SelfLIST
+    </div><!-- .site-info -->
 
-  <!--==============================================================================
+    <!--==============================================================================
 		=            THIS IS FOR DEBUGGING. PLZ DISABLE WHEN READY TO PUBLISH            =
 		===============================================================================-->
 
-  <div style="color: dodgerblue"><strong>Current template:</strong>
-    <?php echo get_current_template( true ); ?>
-  </div>
+    <!-- <div style="color: dodgerblue"><strong>Current template:</strong>
+        <?php //echo get_current_template( true ); ?>
+    </div> -->
 
-  <!-- ====  End of THIS IS FOR DEBUGGING. PLZ DISABLE WHEN READY TO PUBLISH  ==== -->
+    <!-- ====  End of THIS IS FOR DEBUGGING. PLZ DISABLE WHEN READY TO PUBLISH  ==== -->
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

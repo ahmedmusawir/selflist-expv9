@@ -99,7 +99,7 @@ class ListInsertUiDataParent extends CatSelectDataParent {
         alert('Please choose a State ...');
         // SCROLL TO TOP
         window.scrollTo(0, 0);
-        this.selectAllStateCtrl.focus();
+        this.selectAllStateCtrl.trigger('focus');
       }
     } else {
       alert('Please choose a Main Category ...');

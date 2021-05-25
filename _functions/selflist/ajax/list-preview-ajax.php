@@ -39,11 +39,11 @@ function list_preview_ajax()
         while ($the_list->have_posts()): $the_list->the_post();?>
 
 <section class="category">
-  <main id="list-preview" class="site-main container category">
-    <article id="" class="category animate__animated  animate__zoomIn">
-      <header class="entry-header">
+    <main id="list-preview" class="site-main container category">
+        <article id="" class="category animate__animated  animate__zoomIn">
+            <header class="entry-header">
 
-        <?php
+                <?php
         echo '<section class="post-item-cat-list">';
             // SHOW STATE & CITY IN A PARENT CHILD ORDER
             // Coming from _functions/helpers-setup.php
@@ -55,9 +55,10 @@ function list_preview_ajax()
             $user_id = get_current_user_id();
             $udata = get_userdata($user_id);
             $registered = $udata->user_registered;
+
             echo '<span class="bg-danger text-light font-weight-bold float-right py-2 px-4" style="font-size: .8rem;">';
-            printf('%s<br>', date("d", strtotime($registered)));
             printf('%s<br>', date("m", strtotime($registered)));
+            printf('%s<br>', date("d", strtotime($registered)));
             printf('%s<br>', date("y", strtotime($registered)));
             echo '</span>';
             // DISPLAY LIST ID
@@ -76,115 +77,115 @@ function list_preview_ajax()
 
 
 
-        <?php
+                <?php
         // ====================================== END CATEGORY LIST WITH PARENT CHILD ===================================
 
             if ('post' === get_post_type()):
             ?>
-        <div class="entry-meta">
-          <?php
+                <div class="entry-meta">
+                    <?php
         cyberize_app_dev_posted_on();
             // cyberize_app_dev_posted_by();
             ?>
-        </div><!-- .entry-meta -->
-        <?php endif;?>
-      </header><!-- .entry-header -->
+                </div><!-- .entry-meta -->
+                <?php endif;?>
+            </header><!-- .entry-header -->
 
-      <?php cyberize_app_dev_post_thumbnail();?>
+            <?php cyberize_app_dev_post_thumbnail();?>
 
-      <div id="post-content" class="entry-content">
-        <?php
+            <div id="post-content" class="entry-content">
+                <?php
     the_content();
         ?>
-      </div><!-- .entry-content -->
+            </div><!-- .entry-content -->
 
-      <footer class="entry-footer">
-        <section class="flex-icon-five">
-          <?php if (get_field('your_facebook')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/fb-icon.png" alt="Facebook Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <?php if (get_field('your_twitter')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Twitter-Icon.png" alt="Twitter Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <?php if (get_field('your_yelp')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Yelp-icon.png" alt="Yelp Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <?php if (get_field('your_instagram')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Instagram-icon.png" alt="Instagram Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <?php if (get_field('your_linkedin')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Linkedin-Icon.png" alt="Linkedin Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <?php if (get_field('your_google_plus')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
-            </a>
-          </div>
-          <?php endif;?>
+            <footer class="entry-footer">
+                <section class="flex-icon-five">
+                    <?php if (get_field('your_facebook')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/fb-icon.png" alt="Facebook Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <?php if (get_field('your_twitter')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Twitter-Icon.png" alt="Twitter Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <?php if (get_field('your_yelp')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Yelp-icon.png" alt="Yelp Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <?php if (get_field('your_instagram')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Instagram-icon.png" alt="Instagram Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <?php if (get_field('your_linkedin')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Linkedin-Icon.png" alt="Linkedin Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <?php if (get_field('your_google_plus')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
 
-        </section>
+                </section>
 
-        <section class="flex-icon-five">
+                <section class="flex-icon-five">
 
-          <div class="flex-icon-item">
-            <a href="tel:404-321-1234">
-              <img src="/wp-content/uploads/Cell-icon.png" alt="Phone Number">
-            </a>
-          </div>
-          <div class="flex-icon-item">
-            <a href="mailto:webmaster@example.com">
-              <img src="/wp-content/uploads/Email-icon.png" alt="Email Address">
-            </a>
-          </div>
-          <?php if (get_field('your_site')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Website-icon.png" alt="Website Link">
-            </a>
-          </div>
-          <?php endif;?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/HMU-icon.png" alt="HMU Link">
-            </a>
-          </div>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
-            </a>
-          </div>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png" alt="Flag Link">
-            </a>
-          </div>
+                    <div class="flex-icon-item">
+                        <a href="tel:404-321-1234">
+                            <img src="/wp-content/uploads/Cell-icon.png" alt="Phone Number">
+                        </a>
+                    </div>
+                    <div class="flex-icon-item">
+                        <a href="mailto:webmaster@example.com">
+                            <img src="/wp-content/uploads/Email-icon.png" alt="Email Address">
+                        </a>
+                    </div>
+                    <?php if (get_field('your_site')): ?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Website-icon.png" alt="Website Link">
+                        </a>
+                    </div>
+                    <?php endif;?>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/HMU-icon.png" alt="HMU Link">
+                        </a>
+                    </div>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
+                        </a>
+                    </div>
+                    <div class="flex-icon-item">
+                        <a href="#">
+                            <img src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png" alt="Flag Link">
+                        </a>
+                    </div>
 
-        </section>
+                </section>
 
-      </footer><!-- .entry-footer -->
-    </article><!-- #post-ENDS -->
-  </main>
+            </footer><!-- .entry-footer -->
+        </article><!-- #post-ENDS -->
+    </main>
 </section>
 <?php
 
