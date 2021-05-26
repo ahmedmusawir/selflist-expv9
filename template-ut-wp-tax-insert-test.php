@@ -19,7 +19,7 @@ get_header('ut');
 
 <main id="primary" class="site-main container">
 
-  <?php 
+    <?php 
     /**
      * CATEGORY INSERT TEST
      */

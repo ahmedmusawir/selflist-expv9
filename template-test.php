@@ -21,11 +21,27 @@ get_header('loggedout');
 
         <h1>Copy This Template for testing ...</h1>
 
-        <?php 
-          echo 'Result goes here..';
-          $person = new Person_Object('Moose');
-          echo $person->get_name();
-        ?>
+        <?php
+echo 'Result goes here..';
+
+// Args for User Query
+$args = array(
+    'role' => 'subscriber',
+);
+
+// THE USER QUERY
+$user_query = new WP_User_Query($args);
+
+// THE USER LOOP
+if (!empty($user_query->get_results())) {
+    foreach ($user_query->get_results() as $user) {
+        // $user_id = $user->id;
+        echo '<pre>';
+        print_r($user->id);
+        echo '</pre>';
+    }
+}
+?>
 
     </header><!-- #masthead -->
 

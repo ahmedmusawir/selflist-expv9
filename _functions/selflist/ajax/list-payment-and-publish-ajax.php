@@ -51,11 +51,10 @@ function list_payment_and_publish_ajax()
         $post_update_status = wp_update_post($args);
 
         // SETTING PAYMENT POINTS AS MINUTES
-        $minutes = $publish_days;
+        $number_of_days = $publish_days;
 
-        // SETTING LISTING EXPIRITION TIME WITH WP CRON 
-        // [DISABLED TEMPORARILY]
-        // wp_schedule_single_event(time() + $minutes * 60, 'UNLIST_event', [$post_id]);
+        // SETTING LISTING EXPIRITION TIME WITH WP CRON [Based on number of days or points]
+        wp_schedule_single_event(time() + $number_of_days * 60 * 60 * 24, 'UNLIST_event', [$post_id]);
         // wp_schedule_single_event( $timestamp:integer, $hook:string, $args:array )
     }
 

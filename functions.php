@@ -161,12 +161,7 @@ require get_theme_file_path('/_functions/selflist/ajax/list-flag-ajax.php');
 
 
 // OOP PHP TEST
-require get_theme_file_path('/_oop-functions/inc/class-person-object.php');
-
-
-
-
-
+// require get_theme_file_path('/_oop-functions/inc/class-person-object.php');
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
 // Enable the option show in rest
@@ -174,3 +169,8 @@ require get_theme_file_path('/_oop-functions/inc/class-person-object.php');
 
 // Enable the option edit in rest
 // add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+
+
+// SETTING UP CRON TEST
+// require get_theme_file_path('/_functions/selflist/wp-cron/wp-cron-test.php');
+require get_theme_file_path('/_functions/selflist/wp-cron/selflist-auto-point-add-monthly.php');
