@@ -14,7 +14,7 @@
         <!-- <label class="font-weight-bold" for="lister-name">Contact:</label> -->
         <input type="text" class="form-control" id="lister-name" name="lister-name" aria-describedby="textHelp"
             placeholder="Your Name">
-        <small id="textHelp" class="form-text text-muted">Ex: Donald Trump</small>
+        <small id="textHelp" class="form-text text-muted">Ex: John Doe</small>
     </div>
     <!-- PHONE -->
     <div class="form-group">
@@ -28,7 +28,7 @@
         <!-- <label class="font-weight-bold" for="lister-email">Email:</label> -->
         <input type="email" class="form-control" id="lister-email" name="lister-email" aria-describedby="textHelp"
             placeholder="Your Email Address">
-        <small id="textHelp" class="form-text text-muted">Ex: trump@whitehouse.com</small>
+        <small id="textHelp" class="form-text text-muted">Ex: john@doe.com</small>
     </div>
     <!-- WEBSITE -->
     <div class="form-group">

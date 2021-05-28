@@ -17,20 +17,21 @@ get_header();
 
 <div id="primary" class="site-main container pt-5">
 
-  <!-- <hr> -->
+    <p class="text-center">Start searching now ...</p>
 
-  <section id="selflist-search-input-box" class="selflist-search-input-box">
+    <section id="selflist-search-input-box" class="selflist-search-input-box">
 
-    <input type="text" id="cat-search-input-json" class="selflist-search-input">
-    <i class="fas fa-search"></i>
+        <input type="text" id="cat-search-input-json" class="selflist-search-input">
+        <i class="fas fa-search"></i>
 
-  </section>
+    </section>
+
+    <p class="">( Example: Tutoring )</p>
+
+    <div id="category-search-json-result" class="card-columns">
 
 
-  <div id="category-search-json-result" class="card-columns">
+    </div> <!-- #main -->
 
-
-  </div> <!-- #main -->
-
-  <?php
+    <?php
 get_footer();

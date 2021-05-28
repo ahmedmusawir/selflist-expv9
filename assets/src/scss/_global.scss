@@ -123,10 +123,18 @@ a {
 /** 
  * GLOBAL SPINNER LOADER
 */
+// GIF BASED
+// .loading-spinner {
+//   width: 256px;
+//   height: 256px;
+//   display: block;
+//   background: url(/wp-content/uploads/loading-red-spot-small.gif);
+// }
+// HTML BASED
 .loading-spinner {
   display: block;
-  // margin-top: 2rem;
-  // margin-left: 0rem;
+  margin-top: 2rem;
+  margin-left: 0rem !important;
   clear: both;
   border-radius: 50%;
   width: 50px;

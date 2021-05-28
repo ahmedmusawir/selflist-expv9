@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * Template Name: Test Page
+ * Template Name: List HMU
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -12,19 +12,18 @@
  * @package cyberize-app-dev
  */
 
-get_header('loggedout');
+if (is_user_logged_in()) {
+  get_header();
+} else {
+  get_header('loggedout');
+}
 ?>
 
 <main id="primary" class="site-main container">
 
-    <header id="header-test" class="site-header container py-5">
-
-        <h1>Copy This Template for testing ...</h1>
-
-    </header><!-- #masthead -->
+    <h2 class="text-center font-weight-bold mt-5">SELFLIST COPY ME TEMPLATE</h2>
 
 </main><!-- #main -->
-
 
 <?php
 get_footer();

@@ -16,6 +16,9 @@
     <div class="site-info">
         &copy; <?php echo date("Y"); ?> SelfLIST
     </div><!-- .site-info -->
+    <div class="term-and-conditions">
+        <a href="/terms-and-conditions/" class="terms-link">Terms & Conditions</a>
+    </div>
 
     <!--==============================================================================
 		=            THIS IS FOR DEBUGGING. PLZ DISABLE WHEN READY TO PUBLISH            =
